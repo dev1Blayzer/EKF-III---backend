@@ -1,0 +1,47 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - live
+
+jobs:
+  deploy-firebase:
+    name: Deploy Firebase
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          ref: live
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      # - run: echo -e "@madnesslabs:registry=https://npm.pkg.github.com/\n//npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }}" > ~/.npmrc
+      - name: Install Dependencies
+        run: npm install --verbose --unsafe-perm
+      - name: Setup Environment
+        run: npm run env live
+      - name: Setup Environment
+        run: npm run env:firebase:live -- --token "${{ secrets.FIREBASE_TOKEN }}"
+      - name: Deploy to Firebase
+        run: npm run deploy:firebase -- --token "${{ secrets.FIREBASE_TOKEN }}"
+  deploy-graphql:
+    name: Deploy GraphQL
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+        with:
+          ref: live
+      # - run: echo -e "@madnesslabs:registry=https://npm.pkg.github.com/\n//npm.pkg.github.com/:_authToken=${{ secrets.PERSONAL_ACCESS_TOKEN }}" > ~/.npmrc
+      - name: Install Dependencies
+        run: npm install --verbose --unsafe-perm
+      - name: Build
+        run: npm run build:live
+      - uses: actions-hub/gcloud@master
+        env:
+          PROJECT_ID: fireenjin-live
+          APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
+        with:
+          args: app deploy app.yaml

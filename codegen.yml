@@ -1,0 +1,15 @@
+overwrite: true
+schema: "schema.gql"
+documents: "src/**/*.gql"
+generates:
+  dist/definitions.d.ts:
+    plugins:
+      - "typescript"
+  dist/graphql.schema.json:
+    plugins:
+      - "introspection"
+  dist/sdk.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-graphql-request

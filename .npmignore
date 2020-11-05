@@ -1,0 +1,6 @@
+node_modules/
+service-account.json
+env/live
+/environment.json
+.history
+.enjin

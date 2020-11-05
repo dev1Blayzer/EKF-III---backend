@@ -1,0 +1,10 @@
+mutation TieUserToJob($data: TieUserToJobInput!) {
+  tieUserToJob(data: $data) {
+    id
+    customer
+    user {
+      id
+      name
+    }
+  }
+}
