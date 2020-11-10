@@ -20,8 +20,12 @@ export class User {
   @Field(() => ID)
   id: string;
 
-  @Field(() => String)
-  name?: string;
+  @Field(() => String,{
+	  nullable: true,
+	  description: "The user's full name"
+	  
+  })
+  given_name?: string;
 
   @Field(() => String, {
     nullable: true,
@@ -37,7 +41,8 @@ export class User {
 @InputType({ description: "Editable user data" })
 export class UserInput implements Partial<User> {
   @Field({ nullable: true })
-  name?: string;
+  given_name?: string;
+	
 }
 
 @InputType({
