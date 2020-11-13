@@ -246,6 +246,8 @@ input TieUserToJobInput {
 type User {
   # The user's email address
   email: String
+
+  # The user's full name
   given_name: String
   id: ID!
   jobs: [Job!]!
