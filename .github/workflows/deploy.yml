@@ -2,7 +2,7 @@ name: Deploy
 on:
   push:
     branches:
-      - live
+      - master
 
 jobs:
   deploy-firebase:
@@ -12,7 +12,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@master
         with:
-          ref: live
+          ref: master
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -41,7 +41,7 @@ jobs:
         run: npm run build:live
       - uses: actions-hub/gcloud@master
         env:
-          PROJECT_ID: fireenjin-live
+          PROJECT_ID: eatkidfriendly
           APPLICATION_CREDENTIALS: ${{secrets.GOOGLE_APPLICATION_CREDENTIALS}}
         with:
           args: app deploy app.yaml
