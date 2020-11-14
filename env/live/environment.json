@@ -1,0 +1,13 @@
+{
+  "env": "live",
+  "debug": false,
+  "firestore": {
+    "emulate": false
+  },
+  "app": {
+    "url": "https://eatkidfriendly.web.app"
+  },
+  "functions": {
+    "url": "https://us-central1-eatkidfriendly.cloudfunctions.net"
+  }
+}
