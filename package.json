@@ -6,6 +6,7 @@
   },
   "scripts": {
     "build": "npm run clean && tsc && npm run codegen",
+    "build:live": "npm run env live && npm run build",
     "build:firebase": "npm run build && fireenjin triggers",
     "clean": "rimraf dist/",
     "codegen": "graphql-codegen --config codegen.yml && tsc dist/sdk.ts",
@@ -13,6 +14,7 @@
     "deploy:graphql": "gcloud app deploy",
     "deploy:firebase": "firebase deploy",
     "env": "fireenjin env",
+    "env:firebase:live": "npm run env live && firebase use default",
     "g": "fireenjin generate",
     "git:build": "git add . && git commit -m \"Run build\" --no-verify",
     "lint": "tslint --project tsconfig.json",
@@ -76,7 +78,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MadnessLabs/fireenjin-backend.git"
+    "url": "git@github.com:dev1Blayzer/EKF-III---backend.git"
   },
   "private": false,
   "jest": {
