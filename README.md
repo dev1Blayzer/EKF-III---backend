@@ -1,10 +1,10 @@
-# FireEnjin Backend
+# EatKidFriendly Backend
 
-This is a back-end development stack that uses Firebase and GraphQL with the magic of TypeScript.
+The RESTful API / GraphQL implementation of Eat Kid Friendly.
 
 # How to Install
 
-1. git clone https://github.com/MadnessLabs/fireenjin-backend
+1. git clone https://github.com/dev1Blayzer/EKF-III---backend
 2. npm install
 3. Download Service Account JSON from Firebase Project Settings and put it as service-account.json in the root. (See GIF below.)
    ![LT6RvC27Qp](https://user-images.githubusercontent.com/4184680/66259522-8fba8180-e777-11e9-8e37-a7034c06ebd9.gif)
