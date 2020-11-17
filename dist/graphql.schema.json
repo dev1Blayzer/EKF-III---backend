@@ -508,7 +508,7 @@
             "deprecationReason": null
           },
           {
-            "name": "addPlaces",
+            "name": "addPlace",
             "description": null,
             "args": [
               {
@@ -519,7 +519,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "PlacesInput",
+                    "name": "PlaceInput",
                     "ofType": null
                   }
                 },
@@ -531,7 +531,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "Places",
+                "name": "Place",
                 "ofType": null
               }
             },
@@ -539,7 +539,7 @@
             "deprecationReason": null
           },
           {
-            "name": "addSpecials",
+            "name": "addSpecial",
             "description": null,
             "args": [
               {
@@ -550,7 +550,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "SpecialsInput",
+                    "name": "SpecialInput",
                     "ofType": null
                   }
                 },
@@ -562,7 +562,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "Specials",
+                "name": "Special",
                 "ofType": null
               }
             },
@@ -601,37 +601,6 @@
             "deprecationReason": null
           },
           {
-            "name": "addUsers",
-            "description": null,
-            "args": [
-              {
-                "name": "data",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "UsersInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "Users",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "deleteJob",
             "description": null,
             "args": [
@@ -663,7 +632,7 @@
             "deprecationReason": null
           },
           {
-            "name": "deletePlaces",
+            "name": "deletePlace",
             "description": null,
             "args": [
               {
@@ -686,7 +655,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "Places",
+                "name": "Place",
                 "ofType": null
               }
             },
@@ -694,7 +663,7 @@
             "deprecationReason": null
           },
           {
-            "name": "deleteSpecials",
+            "name": "deleteSpecial",
             "description": null,
             "args": [
               {
@@ -717,7 +686,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "Specials",
+                "name": "Special",
                 "ofType": null
               }
             },
@@ -749,37 +718,6 @@
               "ofType": {
                 "kind": "OBJECT",
                 "name": "User",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "deleteUsers",
-            "description": null,
-            "args": [
-              {
-                "name": "id",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "Users",
                 "ofType": null
               }
             },
@@ -832,7 +770,7 @@
             "deprecationReason": null
           },
           {
-            "name": "editPlaces",
+            "name": "editPlace",
             "description": null,
             "args": [
               {
@@ -843,7 +781,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "PlacesInput",
+                    "name": "PlaceInput",
                     "ofType": null
                   }
                 },
@@ -869,7 +807,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "Places",
+                "name": "Place",
                 "ofType": null
               }
             },
@@ -877,7 +815,7 @@
             "deprecationReason": null
           },
           {
-            "name": "editSpecials",
+            "name": "editSpecial",
             "description": null,
             "args": [
               {
@@ -888,7 +826,7 @@
                   "name": null,
                   "ofType": {
                     "kind": "INPUT_OBJECT",
-                    "name": "SpecialsInput",
+                    "name": "SpecialInput",
                     "ofType": null
                   }
                 },
@@ -914,7 +852,7 @@
               "name": null,
               "ofType": {
                 "kind": "OBJECT",
-                "name": "Specials",
+                "name": "Special",
                 "ofType": null
               }
             },
@@ -967,51 +905,6 @@
             "deprecationReason": null
           },
           {
-            "name": "editUsers",
-            "description": null,
-            "args": [
-              {
-                "name": "data",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "INPUT_OBJECT",
-                    "name": "UsersInput",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "id",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
-              }
-            ],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "OBJECT",
-                "name": "Users",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
             "name": "tieUserToJob",
             "description": null,
             "args": [
@@ -1050,7 +943,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "Places",
+        "name": "Place",
         "description": null,
         "fields": [
           {
@@ -1093,7 +986,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "PlacesInput",
+        "name": "PlaceInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -1296,19 +1189,9 @@
             "deprecationReason": null
           },
           {
-            "name": "places",
+            "name": "place",
             "description": null,
             "args": [
-              {
-                "name": "data",
-                "description": null,
-                "type": {
-                  "kind": "INPUT_OBJECT",
-                  "name": "ListQueryInput",
-                  "ofType": null
-                },
-                "defaultValue": null
-              },
               {
                 "name": "id",
                 "description": null,
@@ -1325,6 +1208,29 @@
               }
             ],
             "type": {
+              "kind": "OBJECT",
+              "name": "Place",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "places",
+            "description": null,
+            "args": [
+              {
+                "name": "data",
+                "description": null,
+                "type": {
+                  "kind": "INPUT_OBJECT",
+                  "name": "ListQueryInput",
+                  "ofType": null
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
               "kind": "LIST",
               "name": null,
               "ofType": {
@@ -1332,10 +1238,37 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "Places",
+                  "name": "Place",
                   "ofType": null
                 }
               }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "special",
+            "description": null,
+            "args": [
+              {
+                "name": "id",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              }
+            ],
+            "type": {
+              "kind": "OBJECT",
+              "name": "Special",
+              "ofType": null
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -1353,20 +1286,6 @@
                   "ofType": null
                 },
                 "defaultValue": null
-              },
-              {
-                "name": "id",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
-                },
-                "defaultValue": null
               }
             ],
             "type": {
@@ -1377,7 +1296,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "Specials",
+                  "name": "Special",
                   "ofType": null
                 }
               }
@@ -1421,22 +1340,8 @@
                 "description": null,
                 "type": {
                   "kind": "INPUT_OBJECT",
-                  "name": "ListQueryInput",
+                  "name": "UserListQueryInput",
                   "ofType": null
-                },
-                "defaultValue": null
-              },
-              {
-                "name": "id",
-                "description": null,
-                "type": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  }
                 },
                 "defaultValue": null
               }
@@ -1449,7 +1354,7 @@
                 "name": null,
                 "ofType": {
                   "kind": "OBJECT",
-                  "name": "Users",
+                  "name": "User",
                   "ofType": null
                 }
               }
@@ -1465,7 +1370,7 @@
       },
       {
         "kind": "OBJECT",
-        "name": "Specials",
+        "name": "Special",
         "description": null,
         "fields": [
           {
@@ -1508,7 +1413,7 @@
       },
       {
         "kind": "INPUT_OBJECT",
-        "name": "SpecialsInput",
+        "name": "SpecialInput",
         "description": null,
         "fields": null,
         "inputFields": [
@@ -1823,74 +1728,6 @@
         "description": "The `Boolean` scalar type represents `true` or `false`.",
         "fields": null,
         "inputFields": null,
-        "interfaces": null,
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "OBJECT",
-        "name": "Users",
-        "description": null,
-        "fields": [
-          {
-            "name": "id",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "ID",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          },
-          {
-            "name": "name",
-            "description": null,
-            "args": [],
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "isDeprecated": false,
-            "deprecationReason": null
-          }
-        ],
-        "inputFields": null,
-        "interfaces": [],
-        "enumValues": null,
-        "possibleTypes": null
-      },
-      {
-        "kind": "INPUT_OBJECT",
-        "name": "UsersInput",
-        "description": null,
-        "fields": null,
-        "inputFields": [
-          {
-            "name": "name",
-            "description": null,
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ],
         "interfaces": null,
         "enumValues": null,
         "possibleTypes": null

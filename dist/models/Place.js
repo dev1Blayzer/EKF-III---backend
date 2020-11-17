@@ -9,52 +9,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UsersResolver = exports.UsersModel = exports.UsersInput = exports.Users = void 0;
+exports.PlaceResolver = exports.PlaceModel = exports.PlaceInput = exports.Place = void 0;
 const fireorm_1 = require("fireorm");
 const type_graphql_1 = require("type-graphql");
 const Model_1 = require("./Model");
-let Users = class Users {
+let Place = class Place {
 };
 __decorate([
     type_graphql_1.Field(() => type_graphql_1.ID),
     __metadata("design:type", String)
-], Users.prototype, "id", void 0);
+], Place.prototype, "id", void 0);
 __decorate([
     type_graphql_1.Field({
-        description: "The name of the Users"
+        description: "The name of the Places"
     }),
     __metadata("design:type", String)
-], Users.prototype, "name", void 0);
-Users = __decorate([
-    fireorm_1.Collection("users"),
+], Place.prototype, "name", void 0);
+Place = __decorate([
+    fireorm_1.Collection("places"),
     type_graphql_1.ObjectType({
-        description: "The information for a Users document"
+        description: "The information for a Places document"
     })
-], Users);
-exports.Users = Users;
-let UsersInput = class UsersInput {
+], Place);
+exports.Place = Place;
+let PlaceInput = class PlaceInput {
 };
 __decorate([
     type_graphql_1.Field(),
     __metadata("design:type", String)
-], UsersInput.prototype, "name", void 0);
-UsersInput = __decorate([
-    type_graphql_1.InputType({ description: "Editable Users data" })
-], UsersInput);
-exports.UsersInput = UsersInput;
-class UsersModel extends Model_1.default {
+], PlaceInput.prototype, "name", void 0);
+PlaceInput = __decorate([
+    type_graphql_1.InputType({ description: "Editable Places data" })
+], PlaceInput);
+exports.PlaceInput = PlaceInput;
+class PlaceModel extends Model_1.default {
     constructor() {
         super({
-            docSchema: Users,
-            inputType: UsersInput
+            docSchema: Place,
+            inputType: PlaceInput
         });
     }
 }
-exports.UsersModel = UsersModel;
-let UsersResolver = class UsersResolver extends new UsersModel().Resolver {
+exports.PlaceModel = PlaceModel;
+let PlaceResolver = class PlaceResolver extends new PlaceModel().Resolver {
 };
-UsersResolver = __decorate([
-    type_graphql_1.Resolver(of => Users)
-], UsersResolver);
-exports.UsersResolver = UsersResolver;
-//# sourceMappingURL=Users.js.map
+PlaceResolver = __decorate([
+    type_graphql_1.Resolver(of => Place)
+], PlaceResolver);
+exports.PlaceResolver = PlaceResolver;
+//# sourceMappingURL=Place.js.map

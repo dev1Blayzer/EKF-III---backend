@@ -9,52 +9,52 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PlacesResolver = exports.PlacesModel = exports.PlacesInput = exports.Places = void 0;
+exports.SpecialResolver = exports.SpecialModel = exports.SpecialInput = exports.Special = void 0;
 const fireorm_1 = require("fireorm");
 const type_graphql_1 = require("type-graphql");
 const Model_1 = require("./Model");
-let Places = class Places {
+let Special = class Special {
 };
 __decorate([
     type_graphql_1.Field(() => type_graphql_1.ID),
     __metadata("design:type", String)
-], Places.prototype, "id", void 0);
+], Special.prototype, "id", void 0);
 __decorate([
     type_graphql_1.Field({
-        description: "The name of the Places"
+        description: "The name of the Specials"
     }),
     __metadata("design:type", String)
-], Places.prototype, "name", void 0);
-Places = __decorate([
-    fireorm_1.Collection("places"),
+], Special.prototype, "name", void 0);
+Special = __decorate([
+    fireorm_1.Collection("specials"),
     type_graphql_1.ObjectType({
-        description: "The information for a Places document"
+        description: "The information for a Specials document"
     })
-], Places);
-exports.Places = Places;
-let PlacesInput = class PlacesInput {
+], Special);
+exports.Special = Special;
+let SpecialInput = class SpecialInput {
 };
 __decorate([
     type_graphql_1.Field(),
     __metadata("design:type", String)
-], PlacesInput.prototype, "name", void 0);
-PlacesInput = __decorate([
-    type_graphql_1.InputType({ description: "Editable Places data" })
-], PlacesInput);
-exports.PlacesInput = PlacesInput;
-class PlacesModel extends Model_1.default {
+], SpecialInput.prototype, "name", void 0);
+SpecialInput = __decorate([
+    type_graphql_1.InputType({ description: "Editable Specials data" })
+], SpecialInput);
+exports.SpecialInput = SpecialInput;
+class SpecialModel extends Model_1.default {
     constructor() {
         super({
-            docSchema: Places,
-            inputType: PlacesInput
+            docSchema: Special,
+            inputType: SpecialInput
         });
     }
 }
-exports.PlacesModel = PlacesModel;
-let PlacesResolver = class PlacesResolver extends new PlacesModel().Resolver {
+exports.SpecialModel = SpecialModel;
+let SpecialResolver = class SpecialResolver extends new SpecialModel().Resolver {
 };
-PlacesResolver = __decorate([
-    type_graphql_1.Resolver(of => Places)
-], PlacesResolver);
-exports.PlacesResolver = PlacesResolver;
-//# sourceMappingURL=Places.js.map
+SpecialResolver = __decorate([
+    type_graphql_1.Resolver(of => Special)
+], SpecialResolver);
+exports.SpecialResolver = SpecialResolver;
+//# sourceMappingURL=Special.js.map
