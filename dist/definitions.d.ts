@@ -62,11 +62,20 @@ export type Migration = {
 export type Mutation = {
   __typename?: 'Mutation';
   addJob: Job;
+  addPlaces: Places;
+  addSpecials: Specials;
   addUser: User;
+  addUsers: Users;
   deleteJob: Job;
+  deletePlaces: Places;
+  deleteSpecials: Specials;
   deleteUser: User;
+  deleteUsers: Users;
   editJob: Job;
+  editPlaces: Places;
+  editSpecials: Specials;
   editUser: User;
+  editUsers: Users;
   tieUserToJob: Job;
 };
 
@@ -76,8 +85,23 @@ export type MutationAddJobArgs = {
 };
 
 
+export type MutationAddPlacesArgs = {
+  data: PlacesInput;
+};
+
+
+export type MutationAddSpecialsArgs = {
+  data: SpecialsInput;
+};
+
+
 export type MutationAddUserArgs = {
   data: UserInput;
+};
+
+
+export type MutationAddUsersArgs = {
+  data: UsersInput;
 };
 
 
@@ -86,7 +110,22 @@ export type MutationDeleteJobArgs = {
 };
 
 
+export type MutationDeletePlacesArgs = {
+  id: Scalars['String'];
+};
+
+
+export type MutationDeleteSpecialsArgs = {
+  id: Scalars['String'];
+};
+
+
 export type MutationDeleteUserArgs = {
+  id: Scalars['String'];
+};
+
+
+export type MutationDeleteUsersArgs = {
   id: Scalars['String'];
 };
 
@@ -97,14 +136,42 @@ export type MutationEditJobArgs = {
 };
 
 
+export type MutationEditPlacesArgs = {
+  data: PlacesInput;
+  id: Scalars['String'];
+};
+
+
+export type MutationEditSpecialsArgs = {
+  data: SpecialsInput;
+  id: Scalars['String'];
+};
+
+
 export type MutationEditUserArgs = {
   data: UserInput;
   id: Scalars['String'];
 };
 
 
+export type MutationEditUsersArgs = {
+  data: UsersInput;
+  id: Scalars['String'];
+};
+
+
 export type MutationTieUserToJobArgs = {
   data: TieUserToJobInput;
+};
+
+export type Places = {
+  __typename?: 'Places';
+  id: Scalars['ID'];
+  name: Scalars['String'];
+};
+
+export type PlacesInput = {
+  name: Scalars['String'];
 };
 
 export type Query = {
@@ -115,8 +182,10 @@ export type Query = {
   logs?: Maybe<Array<Log>>;
   migration?: Maybe<Migration>;
   migrations?: Maybe<Array<Migration>>;
+  places?: Maybe<Array<Places>>;
+  specials?: Maybe<Array<Specials>>;
   user?: Maybe<User>;
-  users?: Maybe<Array<User>>;
+  users?: Maybe<Array<Users>>;
 };
 
 
@@ -150,13 +219,36 @@ export type QueryMigrationsArgs = {
 };
 
 
+export type QueryPlacesArgs = {
+  data?: Maybe<ListQueryInput>;
+  id: Scalars['String'];
+};
+
+
+export type QuerySpecialsArgs = {
+  data?: Maybe<ListQueryInput>;
+  id: Scalars['String'];
+};
+
+
 export type QueryUserArgs = {
   id: Scalars['String'];
 };
 
 
 export type QueryUsersArgs = {
-  data?: Maybe<UserListQueryInput>;
+  data?: Maybe<ListQueryInput>;
+  id: Scalars['String'];
+};
+
+export type Specials = {
+  __typename?: 'Specials';
+  id: Scalars['ID'];
+  name: Scalars['String'];
+};
+
+export type SpecialsInput = {
+  name: Scalars['String'];
 };
 
 export type TieUserToJobInput = {
@@ -167,13 +259,13 @@ export type TieUserToJobInput = {
 export type User = {
   __typename?: 'User';
   email?: Maybe<Scalars['String']>;
+  given_name?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   jobs: Array<Job>;
-  name: Scalars['String'];
 };
 
 export type UserInput = {
-  name?: Maybe<Scalars['String']>;
+  given_name?: Maybe<Scalars['String']>;
 };
 
 export type UserListQueryInput = {
@@ -191,4 +283,14 @@ export type UserListQueryInput = {
   whereIn?: Maybe<Scalars['String']>;
   whereLessThan?: Maybe<Scalars['String']>;
   whereLessThanOrEqual?: Maybe<Scalars['String']>;
+};
+
+export type Users = {
+  __typename?: 'Users';
+  id: Scalars['ID'];
+  name: Scalars['String'];
+};
+
+export type UsersInput = {
+  name: Scalars['String'];
 };

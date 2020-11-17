@@ -4,7 +4,7 @@ mutation TieUserToJob($data: TieUserToJobInput!) {
     customer
     user {
       id
-      name
+      given_name
     }
   }
 }

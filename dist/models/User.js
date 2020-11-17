@@ -34,9 +34,12 @@ __decorate([
     __metadata("design:type", String)
 ], User.prototype, "id", void 0);
 __decorate([
-    type_graphql_1.Field(() => String),
+    type_graphql_1.Field(() => String, {
+        nullable: true,
+        description: "The user's full name"
+    }),
     __metadata("design:type", String)
-], User.prototype, "name", void 0);
+], User.prototype, "given_name", void 0);
 __decorate([
     type_graphql_1.Field(() => String, {
         nullable: true,
@@ -59,7 +62,7 @@ let UserInput = class UserInput {
 __decorate([
     type_graphql_1.Field({ nullable: true }),
     __metadata("design:type", String)
-], UserInput.prototype, "name", void 0);
+], UserInput.prototype, "given_name", void 0);
 UserInput = __decorate([
     type_graphql_1.InputType({ description: "Editable user data" })
 ], UserInput);
