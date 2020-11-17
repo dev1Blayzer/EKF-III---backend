@@ -15,7 +15,7 @@ import Model from "./Model";
 @ObjectType({
   description: "The information for a Specials document"
 })
-export class Specials {
+export class Special {
   @Field(() => ID)
   id: string;
   @Field({
@@ -25,22 +25,22 @@ export class Specials {
 }
 
 @InputType({ description: "Editable Specials data" })
-export class SpecialsInput implements Partial<Specials> {
+export class SpecialInput implements Partial<Special> {
   @Field()
   name: string;
 }
 
-export class SpecialsModel extends Model<Specials> {
+export class SpecialModel extends Model<Special> {
   constructor() {
     super({
-      docSchema: Specials,
-      inputType: SpecialsInput
+      docSchema: Special,
+      inputType: SpecialInput
     });
   }
 }
 
-@Resolver(of => Specials)
-export class SpecialsResolver extends new SpecialsModel().Resolver {
+@Resolver(of => Special)
+export class SpecialResolver extends new SpecialModel().Resolver {
 //   @FieldResolver()
 //   user(@Root() data: Specials): Promise<User> {
 //     return new UserModel().find(data.user.id);

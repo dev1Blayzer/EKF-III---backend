@@ -15,7 +15,7 @@ import Model from "./Model";
 @ObjectType({
   description: "The information for a Places document"
 })
-export class Places {
+export class Place {
   @Field(() => ID)
   id: string;
   @Field({
@@ -25,22 +25,22 @@ export class Places {
 }
 
 @InputType({ description: "Editable Places data" })
-export class PlacesInput implements Partial<Places> {
+export class PlaceInput implements Partial<Place> {
   @Field()
   name: string;
 }
 
-export class PlacesModel extends Model<Places> {
+export class PlaceModel extends Model<Place> {
   constructor() {
     super({
-      docSchema: Places,
-      inputType: PlacesInput
+      docSchema: Place,
+      inputType: PlaceInput
     });
   }
 }
 
-@Resolver(of => Places)
-export class PlacesResolver extends new PlacesModel().Resolver {
+@Resolver(of => Place)
+export class PlaceResolver extends new PlaceModel().Resolver {
 //   @FieldResolver()
 //   user(@Root() data: Places): Promise<User> {
 //     return new UserModel().find(data.user.id);

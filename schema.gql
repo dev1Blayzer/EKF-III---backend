@@ -104,42 +104,34 @@ type Mutation {
     # Add a new Job document to the Jobs collection.
     data: JobInput!
   ): Job!
-  addPlaces(
-    # Add a new Places document to the Places collection.
-    data: PlacesInput!
-  ): Places!
-  addSpecials(
-    # Add a new Specials document to the Specials collection.
-    data: SpecialsInput!
-  ): Specials!
+  addPlace(
+    # Add a new Place document to the Places collection.
+    data: PlaceInput!
+  ): Place!
+  addSpecial(
+    # Add a new Special document to the Specials collection.
+    data: SpecialInput!
+  ): Special!
   addUser(
     # Add a new User document to the Users collection.
     data: UserInput!
   ): User!
-  addUsers(
-    # Add a new Users document to the Users collection.
-    data: UsersInput!
-  ): Users!
   deleteJob(
     # The ID of the Job document being deleted in the Jobs collection
     id: String!
   ): Job!
-  deletePlaces(
-    # The ID of the Places document being deleted in the Places collection
+  deletePlace(
+    # The ID of the Place document being deleted in the Places collection
     id: String!
-  ): Places!
-  deleteSpecials(
-    # The ID of the Specials document being deleted in the Specials collection
+  ): Place!
+  deleteSpecial(
+    # The ID of the Special document being deleted in the Specials collection
     id: String!
-  ): Specials!
+  ): Special!
   deleteUser(
     # The ID of the User document being deleted in the Users collection
     id: String!
   ): User!
-  deleteUsers(
-    # The ID of the Users document being deleted in the Users collection
-    id: String!
-  ): Users!
   editJob(
     # Update a Job document in the Jobs collection.
     data: JobInput!
@@ -147,20 +139,20 @@ type Mutation {
     # The ID of the Job document in the Jobs collection
     id: String!
   ): Job!
-  editPlaces(
-    # Update a Places document in the Places collection.
-    data: PlacesInput!
+  editPlace(
+    # Update a Place document in the Places collection.
+    data: PlaceInput!
 
-    # The ID of the Places document in the Places collection
+    # The ID of the Place document in the Places collection
     id: String!
-  ): Places!
-  editSpecials(
-    # Update a Specials document in the Specials collection.
-    data: SpecialsInput!
+  ): Place!
+  editSpecial(
+    # Update a Special document in the Specials collection.
+    data: SpecialInput!
 
-    # The ID of the Specials document in the Specials collection
+    # The ID of the Special document in the Specials collection
     id: String!
-  ): Specials!
+  ): Special!
   editUser(
     # Update a User document in the Users collection.
     data: UserInput!
@@ -168,18 +160,11 @@ type Mutation {
     # The ID of the User document in the Users collection
     id: String!
   ): User!
-  editUsers(
-    # Update a Users document in the Users collection.
-    data: UsersInput!
-
-    # The ID of the Users document in the Users collection
-    id: String!
-  ): Users!
   tieUserToJob(data: TieUserToJobInput!): Job!
 }
 
 # The information for a Places document
-type Places {
+type Place {
   id: ID!
 
   # The name of the Places
@@ -187,7 +172,7 @@ type Places {
 }
 
 # Editable Places data
-input PlacesInput {
+input PlaceInput {
   name: String!
 }
 
@@ -210,21 +195,27 @@ type Query {
   # Get a list of Migration documents from the Migrations collection.
   migrations(data: ListQueryInput): [Migration!]
 
-  # Get a list of Places documents from the Places collection.
-  places(data: ListQueryInput, id: String!): [Places!]
+  # Get a specific Place document from the Places collection.
+  place(id: String!): Place
 
-  # Get a list of Specials documents from the Specials collection.
-  specials(data: ListQueryInput, id: String!): [Specials!]
+  # Get a list of Place documents from the Places collection.
+  places(data: ListQueryInput): [Place!]
+
+  # Get a specific Special document from the Specials collection.
+  special(id: String!): Special
+
+  # Get a list of Special documents from the Specials collection.
+  specials(data: ListQueryInput): [Special!]
 
   # Get a specific User document from the Users collection.
   user(id: String!): User
 
-  # Get a list of Users documents from the Users collection.
-  users(data: ListQueryInput, id: String!): [Users!]
+  # Get a list of User documents from the Users collection.
+  users(data: UserListQueryInput): [User!]
 }
 
 # The information for a Specials document
-type Specials {
+type Special {
   id: ID!
 
   # The name of the Specials
@@ -232,7 +223,7 @@ type Specials {
 }
 
 # Editable Specials data
-input SpecialsInput {
+input SpecialInput {
   name: String!
 }
 
@@ -299,17 +290,4 @@ input UserListQueryInput {
 
   # Where a column is less than or equal to a value
   whereLessThanOrEqual: String
-}
-
-# The information for a Users document
-type Users {
-  id: ID!
-
-  # The name of the Users
-  name: String!
-}
-
-# Editable Users data
-input UsersInput {
-  name: String!
 }
