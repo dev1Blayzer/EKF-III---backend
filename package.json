@@ -14,7 +14,7 @@
     "deploy:graphql": "gcloud app deploy",
     "deploy:firebase": "firebase deploy",
     "env": "fireenjin env",
-    "env:firebase:live": "npm run env live && firebase use default",
+    "env:firebase:live": "npm run env live",
     "g": "fireenjin generate",
     "git:build": "git add . && git commit -m \"Run build\" --no-verify",
     "lint": "tslint --project tsconfig.json",
